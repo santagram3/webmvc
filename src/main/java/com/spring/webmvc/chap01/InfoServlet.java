@@ -13,20 +13,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/info") // 약속 요청을 보내고싶으면 저걸 해야됨
+@WebServlet("/info")
 public class InfoServlet extends HttpServlet {
 
     public InfoServlet() {
-        System.out.println("\n\n\nInfoServlet request! call !!\n\n\n");
+        System.out.println("InfoServlet constructor call!");
     }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        System.out.println("info request.");
+//        System.out.println("info request!!");
+//
+//        System.out.println("connected IP address: " + req.getRemoteAddr());
+//        System.out.println("hobby: " + req.getParameter("hobby"));
 
-        // 요청정보 받기
+        // 요청 정보 받기
         double height = Double.parseDouble(req.getParameter("height"));
         double weight = Double.parseDouble(req.getParameter("weight"));
+
         // 응답 정보 생성하기
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
@@ -35,26 +39,25 @@ public class InfoServlet extends HttpServlet {
 
         w.write("<html>");
         w.write("<body>");
-        double BMI = calcBMI(height, weight);
-        w.write("<h1>당신의 BMI지수는  " + BMI + "군요???</h1>");
-        if (BMI > 25.0) {
-            System.out.println("<h1>당신은 과체중입니다.</h1>");
-        } else if (15 <= BMI || BMI < 25.0) {
-            System.out.println("<h1>당신은 중체중입니다.</h1>");
+        double bmi = calcBMI(height, weight);
+        w.write("  <h1>당신의 체질량지수는 " + bmi + "입니다!?</h1>");
+
+        if (bmi > 25.0) {
+            w.write("<h2>과체중입니다.</h2>");
+        } else if (bmi < 18.5) {
+            w.write("<h2>저체중입니다.</h2>");
         } else {
-            System.out.println("<h1>당신은 저체중입니다.</h1>");
+            w.write("<h2>정상 체중입니다.</h2>");
         }
+
         w.write("</body>");
         w.write("</html>");
 
-
     }
-
 
     private double calcBMI(double cm, double kg) {
         double m = cm / 100;
         double bmi = kg / (m * m);
         return bmi;
-
     }
 }
