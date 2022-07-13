@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("") // 여기에 /hw 를 넣어야 재대로 작동함 // 내가만든거 지우고 
+@RequestMapping("") // 여기에 /hw 를 넣어야 재대로 작동함 // 내가만든거 지우고
 public class LoginControllerT {
 
     /*
