@@ -1,6 +1,7 @@
 package com.spring.webmvc.springmvc.chap02.repository;
 
 import com.spring.webmvc.springmvc.chap02.domain.Score;
+import net.bytebuddy.TypeCache;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,15 +41,15 @@ class ScoreRepositoryImplTest {
 
     }
 
-    @Test
-    @DisplayName("모든 성적 정보가 나와야 한다 ")
-    void findAllTest(){
-        List<Score> all = repository.findAll();
-        for (Score score : all) {
-            System.out.println(score.toString());
-        }
+//    @Test
+//    @DisplayName("모든 성적 정보가 나와야 한다 ")
+//    void findAllTest(){
+//        List<Score> all = repository.findAll();
+//        for (Score score : all) {
+//            System.out.println(score.toString());
+//        }
 //        all.forEach(s -> System.out.println(s));
-    }
+//    }
     @Test
     @DisplayName("선택한 선택정보가 나와야 한다 ")
     void findOneTest(){

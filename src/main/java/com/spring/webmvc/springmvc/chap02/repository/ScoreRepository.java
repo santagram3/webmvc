@@ -15,7 +15,7 @@ public interface ScoreRepository {
     // 정답은 ?? :  ~~때문이다 ~~
 
     // 전체 점수 조회
-    List<Score> findAll();
+    List<Score> findAll(String sort);
 
     // 개별 점수 조회
     Score findOne(int stuNum);
