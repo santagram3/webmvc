@@ -16,6 +16,7 @@ import static com.spring.webmvc.springmvc.chap02.domain.Grade.*;
 @ToString
 //@NoArgsConstructor
 @Log4j2
+
 public class Score {
 
     // 클라이언트가 전달할 데이터

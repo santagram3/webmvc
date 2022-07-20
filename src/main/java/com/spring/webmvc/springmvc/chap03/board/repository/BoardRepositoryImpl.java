@@ -24,7 +24,7 @@ public class BoardRepositoryImpl implements BoardRepository {
     public List<Board> findAll() {
         String sql = "select * from board";
 
-        return template.query(sql.toString() ,new BoardRowMapper());
+        return template.query(sql,new BoardRowMapper());
     }
 
     @Override

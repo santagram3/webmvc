@@ -38,6 +38,9 @@ dependencies {
 	implementation "org.springframework.boot:spring-boot-starter-jdbc"
 	// 동시에 데이터베이스 연결정보 를 스프링한테 알려줘야 한다
 
+	//마이바티스 라이브러리
+	implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0"
+
 }
 
 tasks.named('test') {
