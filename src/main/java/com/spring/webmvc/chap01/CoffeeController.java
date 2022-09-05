@@ -14,6 +14,7 @@ public class CoffeeController {
     @RequestMapping("/coffee/form")
 //    localhost : 8181 커밋 1
     // 커밋 2
+    // 커밋 3
     public String form(){
 //        @Log4j2 이걸 클래스 위에 붙이면
 //        System.out.println("/coffe/form Get Request");
