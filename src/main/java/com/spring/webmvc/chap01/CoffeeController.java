@@ -12,7 +12,7 @@ public class CoffeeController {
 
     // 커피 폼 요청
     @RequestMapping("/coffee/form")
-//    localhost : 8181 /
+//    localhost : 8181 커밋 1
     public String form(){
 //        @Log4j2 이걸 클래스 위에 붙이면
 //        System.out.println("/coffe/form Get Request");

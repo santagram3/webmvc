@@ -28,6 +28,7 @@ public class ScoreController {
         // jsp에게 점수 정보 리스트를 전달해야 함.
         List<Score> scoreList = scoreMapper.findAll();
 
+
         // 이름 마킹 처리
         for (Score s : scoreList) {
             String original = s.getName();
